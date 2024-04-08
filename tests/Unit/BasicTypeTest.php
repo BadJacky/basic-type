@@ -63,7 +63,8 @@ it('throws a TypeError when value is an object', function () {
     type(new stdClass())->asBool();
 })->throws(TypeError::class);
 
-it('produces the same result with type function and setValue method', function () {
-    expect(type(123))
-        ->toBe(app('basic-type')->setValue(123));
+it('produces the same result with type function and setValue method to get value', function () {
+
+    expect(type(123)->asInt())
+        ->toBe(app(\BadJacky\BasicType\BasicType::class)->setValue(123)->asInt());
 });

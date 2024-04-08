@@ -30,9 +30,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: >
-            dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, fileinfo${{ matrix.os != 'windows-latest' && ',pcntl,imagick' || '' }}
-          coverage: none
+          extensions: ${{ matrix.os == 'windows-latest' && 'dom, xdebug, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, fileinfo' || 'dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, xdebug,exif, iconv, fileinfo, pcntl, imagick' }}
+          coverage: xdebug
 
       - name: Setup problem matchers
         run: |
@@ -43,4 +42,11 @@ jobs:
           composer install --no-interaction
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
       - name: Execute tests
-        run: vendor/bin/pest
+        run: composer test-coverage
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage-report
+          path: ./coverage
+          artifact-name: coverage-report-${{ runner.os }}
+          artifact-path: ./coverage

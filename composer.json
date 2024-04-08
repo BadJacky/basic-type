@@ -1,6 +1,6 @@
 {
   "name": "badjacky/basic-type",
-  "description": "Complext data type ",
+  "description": "Complex data type ",
   "keywords": [
     "badjacky",
     "basic-type"
@@ -42,8 +42,8 @@
     ]
   },
   "scripts": {
-    "test": "vendor/bin/phpunit",
-    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    "test": "vendor/bin/pest",
+    "test-coverage": "php -d xdebug.mode=coverage vendor/bin/pest --coverage-html coverage"
   },
   "config": {
     "sort-packages": true,
@@ -55,12 +55,6 @@
   "minimum-stability": "stable",
   "extra": {
     "laravel": {
-      "providers": [
-        "BadJacky\\BasicType\\BasicTypeServiceProvider"
-      ],
-      "aliases": {
-        "BasicType": "BadJacky\\BasicType\\BasicTypeFacade"
-      }
     }
   }
 }

@@ -10,8 +10,4 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
-    protected function getPackageProviders($app): array
-    {
-        return [BasicTypeServiceProvider::class];
-    }
 }

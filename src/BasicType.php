@@ -13,7 +13,7 @@ class BasicType
         if ('integer' !== gettype($this->value)) {
             throw new \TypeError('Value is not an integer');
         }
-        return (int)$this->value;
+        return $this->value;
     }
 
     public function asString(): string
@@ -21,7 +21,7 @@ class BasicType
         if ('string' !== gettype($this->value)) {
             throw new \TypeError('Value is not a string');
         }
-        return (string)$this->value;
+        return $this->value;
     }
 
     public function asFloat(): float
@@ -29,7 +29,7 @@ class BasicType
         if ('double' !== gettype($this->value)) {
             throw new \TypeError('Value is not a float');
         }
-        return (float)$this->value;
+        return $this->value;
     }
 
     public function asArray(): array
@@ -37,7 +37,7 @@ class BasicType
         if ('array' !== gettype($this->value)) {
             throw new \TypeError('Value is not an array');
         }
-        return (array)$this->value;
+        return $this->value;
     }
 
     public function asBool(): bool
@@ -45,7 +45,7 @@ class BasicType
         if ('boolean' !== gettype($this->value)) {
             throw new \TypeError('Value is not a bool');
         }
-        return (bool)$this->value;
+        return $this->value;
     }
 
     public function asObject(): object
@@ -53,7 +53,7 @@ class BasicType
         if ('object' !== gettype($this->value)) {
             throw new \TypeError('Value is not an object');
         }
-        return (object)$this->value;
+        return $this->value;
     }
 
     public function asNull(): null
