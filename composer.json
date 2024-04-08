@@ -1,0 +1,66 @@
+{
+  "name": "badjacky/basic-type",
+  "description": "Complext data type ",
+  "keywords": [
+    "badjacky",
+    "basic-type"
+  ],
+  "homepage": "https://github.com/badjacky/basic-type",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "BadJacky",
+      "email": "zhangqi.chen.cn@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": ">10.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": ">=9.0.3",
+    "pestphp/pest": "^2.34.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "BadJacky\\BasicType\\": "src",
+      "BadJacky\\BasicType\\Tests\\": "tests"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BadJacky\\BasicType\\Tests\\": "tests",
+      "BadJacky\\BasicType\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "stable",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "BadJacky\\BasicType\\BasicTypeServiceProvider"
+      ],
+      "aliases": {
+        "BasicType": "BadJacky\\BasicType\\BasicTypeFacade"
+      }
+    }
+  }
+}
