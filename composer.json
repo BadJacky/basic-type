@@ -20,8 +20,8 @@
     "illuminate/support": ">10.0"
   },
   "require-dev": {
-    "orchestra/testbench": ">=9.0.3",
-    "pestphp/pest": "^2.34.7"
+    "orchestra/testbench": ">=9.1.2",
+    "pestphp/pest": "^2.34.8"
   },
   "autoload": {
     "psr-4": {

@@ -25,3 +25,4 @@ Homestead.json
 coverage/
 
 .DS_Store
+.idea/
