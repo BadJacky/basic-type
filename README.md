@@ -1,14 +1,11 @@
-# Very short description of the package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/badjacky/basic-type.svg?style=flat-square)](https://packagist.org/packages/badjacky/basic-type)
-[![Total Downloads](https://img.shields.io/packagist/dt/badjacky/basic-type.svg?style=flat-square)](https://packagist.org/packages/badjacky/basic-type)
-![GitHub Actions](https://github.com/badjacky/basic-type/actions/workflows/main.yml/badge.svg)
+# Basic Type Assert
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+Basic Type Assert is a PHP package designed to simplify and enhance type assertions in your applications.
 
 ## Installation
 
-You can install the package via composer:
+Install the package via Composer:
 
 ```bash
 composer require badjacky/basic-type
@@ -16,37 +13,45 @@ composer require badjacky/basic-type
 
 ## Usage
 
+Here is a basic usage example:
+
 ```php
-// Usage description here
+use BadJacky\BasicType\Assert;
+
+// Example usage
+Assert::string($value);
+Assert::integer($value);
 ```
 
-### Testing
+## Testing
+
+To run tests, use the following command:
 
 ```bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+See [CHANGELOG](CHANGELOG.md) for recent updates.
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+See [CONTRIBUTING](CONTRIBUTING.md) for contribution guidelines.
 
-### Security
+## Security
 
-If you discover any security related issues, please email zhangqi.chen.cn@gmail.com instead of using the issue tracker.
+If you find any security-related issues, please email zhangqi.chen.cn@gmail.com instead of using the issue tracker.
 
 ## Credits
 
--   [BadJacky](https://github.com/badjacky)
--   [All Contributors](../../contributors)
+- [BadJacky](https://github.com/BadJacky)
+- All contributors
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
 
-## Laravel Package Boilerplate
+## Acknowledgments
 
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).

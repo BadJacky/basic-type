@@ -85,4 +85,15 @@ class BasicType
         $this->value = $value;
         return $this;
     }
+
+    public function asInsteadOf(mixed $value): mixed
+    {
+        if (is_object($value)) {
+            $value = get_class($value);
+        }
+        if (false === $this->value instanceof $value) {
+            throw new \TypeError('Value is not an instance of ' . $value);
+        }
+        return $this->value;
+    }
 }
