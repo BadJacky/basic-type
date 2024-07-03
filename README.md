@@ -16,11 +16,18 @@ composer require badjacky/basic-type
 Here is a basic usage example:
 
 ```php
-use BadJacky\BasicType\Assert;
+use function BadJacky\BasicType\type;
+
 
 // Example usage
-Assert::string($value);
-Assert::integer($value);
+type(1)->asInt(); // 1
+type(['a'])->asArray(); // ['a']
+type('string')->asString(); // 'string'
+type(1.1)->asFloat(); // 1.1
+type(true)->asBool(); // true
+type(null)->asNull(); // null
+type(new stdClass())->asObject(); // stdClass
+
 ```
 
 ## Testing
